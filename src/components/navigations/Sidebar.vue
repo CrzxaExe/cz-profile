@@ -6,7 +6,7 @@
         <div class="text-lg lg:text-xl flex flex-col justify-between min-h-[93vh] lg:min-h-fit items-baseline-last lg:block gap-2" :class="[toggle ? 'block' : 'hidden']">
             <ul class="w-full lg:py-5 flex flex-col gap-2 lg:gap-4 relative">
                 <NavLink v-for="({ icon, to, name }, i) in navigation" :icon :to :name :key="i" />
-                <div class="large-only-view bg-white dark:bg-dark-900 aspect-[1/0.98] w-[3.5rem] absolute -z-[1] -left-[0.38em] all-transition rounded-l-lg" :style="{ top: `calc(0.75rem + ${6 * sectionIndex}vh)`}"></div>
+                <div class="large-only-view bg-white dark:bg-dark-900 aspect-[1/0.98] w-[3.5rem] absolute -z-[1] -left-[0.38em] all-transition rounded-l-lg" :style="{ top: `calc(0.75rem + ${3.5 * sectionIndex}rem)`}"></div>
             </ul>
 
             <button @click="changeDarkMode()" class="aspect-square bg-dark-700/20 dark:bg-white/20 px-2.5 rounded-xl self-end lg:self-center">

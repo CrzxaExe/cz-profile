@@ -15,9 +15,9 @@
                 An ordinary people that creating many apps or develop some mod for any games or even create automatic bots to do something.
             </p>
 
-            <a href="#about" class="bg-dark-900 hover:bg-dark-900/40 dark:bg-white dark:hover:bg-white/40 text-white hover:text-dark-900 dark:text-black dark:hover:text-white font-medium text-base lg:text-lg mt-6 lg:mt-8 px-3 lg:px-4 py-1.5 rounded-full transition-colors inline-block ease-in-out duration-300 hero-slide">About Me</a>
+            <a href="#about" class="bg-dark-900 hover:bg-dark-900/40 dark:bg-white dark:hover:bg-white/40 text-white hover:text-dark-900 dark:text-black dark:hover:text-white font-medium text-base lg:text-lg mt-6 lg:mt-8 px-3 lg:px-4 py-1.5 rounded-full transition-colors inline-block ease-in-out duration-300 hero-slide hover:animate-pulse">About Me</a>
 
-            <TextLine text="Scroll Down" primary-class="absolute block bottom-[10rem] lg:-bottom-[24vh]" />
+            <TextLine text="Scroll Down" primary-class="absolute block bottom-[10rem] lg:-bottom-[24vh] animate-bounce duration-600" />
         </div>
         <div v-for="(arr, i) in box" class="border-animated-div rotation-animation" :key="i" :class="arr.join(' ')"></div>
     </section>
@@ -30,8 +30,8 @@ import { onMounted } from 'vue';
 import TextLine from '../items/TextLine.vue';
 
 const box = [
-    ["w-[50vh]","lg:w-[68vw]","-top-[0%]","lg:-top-[30%]", "-right-[20%]", "lg:-right-[20%]"],
-    ["w-[62vh]","lg:w-[72vw]","-top-[5%]","lg:-top-[28%]", "-right-[25%]", "lg:-right-[27%]"],
+    ["w-[50vh]","lg:w-[68vw]","-top-[0%]","lg:-top-[33%]", "-right-[20%]", "lg:-right-[20%]"],
+    ["w-[62vh]","lg:w-[72vw]","-top-[5%]","lg:-top-[28%]", "-right-[29%]", "lg:-right-[27%]"],
     ["w-[54vh]","lg:w-[70vw]","-top-[9%]","lg:-top-[25%]", "-right-[23%]", "lg:-right-[38%]"],
     ["w-[48vh]","lg:w-[65vw]","-top-[4%]","lg:-top-[27%]", "-right-[20%]", "lg:-right-[32%]"],
     ["w-[57vh]","lg:w-[60vw]","-top-[12%]","lg:-top-[22%]", "-right-[18%]", "lg:-right-[18%]"],
@@ -88,7 +88,7 @@ function animation() {
 
         gsap.to(el, {
             rotation: "+=360",
-            duration: gsap.utils.random(30, 50),
+            duration: gsap.utils.random(30, 40),
             ease: "none",
             repeat: -1
         });

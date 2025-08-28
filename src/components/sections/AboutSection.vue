@@ -1,7 +1,7 @@
 <template>
-    <section class="min-h-screen w-full px-6 lg:px-22 py-2 lg:py-12 flex flex-col justify-center lg:justify-start gap-2 lg:gap-4"
+    <section class="min-h-screen w-full px-6 lg:px-22 py-2 lg:py-8 -mt-[4rem] flex flex-col justify-center items-center gap-2 lg:gap-4"
         id="about" @mouseover="() => setSectionIndex(1)">
-        <h1 class="text-5xl lg:text-6xl font-bold font-primary -mt-[4rem] lg:mt-4 uppercase about-slide relative">About Me</h1>
+        <h1 class="w-full max-w-[104rem] text-5xl lg:text-6xl font-bold font-primary uppercase about-slide relative">About Me</h1>
         <div class="max-w-[104rem] w-full lg:min-h-1/2 z-[2] flex flex-col lg:flex-row gap-2 lg:gap-[12rem] mt-4 lg:mt-6">
 
             <div class="w-full lg:w-1/2">
@@ -26,10 +26,6 @@
 
                 <span class="font-medium mt-4 lg:mt-8 block about-slide">Codename: CrzxaExe3</span>
             </div>
-
-            <div class="w-full lg:w-1/2 bg-cyan-300/0 about-slide">
-                <TechStack />
-            </div>
         </div>
         <div class="max-w-[104rem] w-full lg:min-h-1/2 z-[2] mt-6 lg:mt-8 flex flex-col lg:flex-row gap-8 lg:gap-6">
             <div class="w-full lg:w-[45%] bg-zinc-100 dark:bg-dark-800 px-5 py-4 lg:py-3 rounded-xl about-slide">
@@ -50,10 +46,10 @@
                 </div>
             </div>
 
-            <div class="w-full lg:w-1/4 about-slide">
+            <!-- <div class="w-full lg:w-1/4 about-slide">
                 <h1 class="font-primary tracking-widest text-xl lg:text-2xl font-semibold">Contact Me</h1>
                 <Sosmed />
-            </div>
+            </div> -->
         </div>
     </section>
 </template>
@@ -64,8 +60,6 @@ import Sosmed from '../lists/Sosmed.vue';
 import { gsap } from 'gsap';
 import { onMounted } from 'vue';
 import { certificate } from '@/constant/data';
-import TextLine from '../items/TextLine.vue';
-import TechStack from '../lists/TechStack.vue';
 
 function animation() {
     const tl = gsap.timeline({
