@@ -1,11 +1,13 @@
 import home from "@/assets/img/btn-icons/home.svg";
 import star from "@/assets/img/btn-icons/star.svg";
 import folder from "@/assets/img/btn-icons/folder.svg";
+import medal from "@/assets/img/btn-icons/medal_star.svg";
 
 export const navigation = [
   { icon: home, to: "#hero", name: "home" },
   { icon: star, to: "#about", name: "about" },
   { icon: folder, to: "#repo", name: "repo" },
+  { icon: medal, to: "#medal", name: "file" },
 ];
 
 export const sosmed = [

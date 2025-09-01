@@ -1,7 +1,7 @@
 <template>
     <section class="min-h-screen w-full px-6 lg:px-22 py-4 lg:py-10 pt-[6rem] lg:pt-10 flex flex-col justify-center items-center" id="skills"
         @mouseover="() => setSectionIndex(2)">
-        <div class="w-full flex flex-col lg:flex-row gap-4">
+        <div class="w-full flex flex-col lg:flex-row gap-4 max-w-[104rem]">
             <div class="w-full lg:w-1/2 repo-slide">
                 <div class="w-fit relative group">
                     <img v-if="profile.avatar_url" :src="profile.avatar_url" :alt="profile.name"
@@ -27,12 +27,12 @@
             </div>
             <div class="w-full lg:w-1/2 flex flex-row justify-end items-center repo-slide">
                 <a :href="profile.html_url"
-                    class="w-full lg:w-fit text-lg flex flex-row items-center justify-center gap-2 bg-black dark:bg-white text-white dark:text-black font-semibold px-3 lg:px-5 py-1 rounded-full"><i
+                    class="w-full lg:w-fit text-lg flex flex-row items-center justify-center gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-dark-700 dark:hover:bg-zinc-400 font-semibold px-3 lg:px-5 py-1 rounded-full transition-color duration-300 ease-in-out"><i
                         class="bx bxl-github text-xl"></i> Github</a>
             </div>
         </div>
         <div
-            class="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[2.3rem] mt-7 lg:mt-8 items-stretch">
+            class="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-[2rem] mt-7 lg:mt-8 max-w-[120rem]">
             <Repository v-for="item in repos" :item class="repo-slide" />
         </div>
     </section>

@@ -29,6 +29,9 @@
 @utility hero-section {
   @apply min-h-screen max-w-screen flex lg:justify-center lg:items-center pt-[11.4rem] lg:pt-0 px-6 lg:px-5 overflow-x-hidden;
 }
+@utility hero-section-container {
+  @apply max-w-[104rem] w-full z-[2] block relative min-h-[89vh] lg:min-h-fit;
+}
 @utility border-animated-div {
   @apply aspect-square border-[1px] lg:border-[0.5px] border-black dark:border-white w-[60vh] opacity-20 lg:w-[70vw] absolute z-[0];
 }

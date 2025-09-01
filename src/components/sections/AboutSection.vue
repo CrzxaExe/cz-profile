@@ -1,11 +1,12 @@
 <template>
-    <section class="min-h-screen w-full px-6 lg:px-22 py-2 lg:py-8 -mt-[4rem] flex flex-col justify-center items-center gap-2 lg:gap-4"
+    <section class="min-h-screen w-full px-6 lg:px-22 py-2 lg:py-8 -mt-[5rem] flex flex-col justify-center items-center gap-2 lg:gap-4"
         id="about" @mouseover="() => setSectionIndex(1)">
-        <h1 class="w-full max-w-[104rem] text-5xl lg:text-6xl font-bold font-primary uppercase about-slide relative">About Me</h1>
-        <div class="max-w-[104rem] w-full lg:min-h-1/2 z-[2] flex flex-col lg:flex-row gap-2 lg:gap-[12rem] mt-4 lg:mt-6">
-
-            <div class="w-full lg:w-1/2">
-
+        <div class="w-full flex flex-row justify-between items-center max-w-[104rem]">
+            <div class="aspect-square h-[2rem] w-[2rem] lg:h-[3rem] lg:w-[3rem] ml-8 bg-dark-900 dark:bg-white block rotate-45 border-4 border-white dark:border-dark-900 ring-8 ring-dark-900 dark:ring-white about-slide"></div>
+            <h1 class="w-fit text-6xl lg:text-8xl text-right font-extrabold font-primary uppercase about-slide relative text-black/40 dark:text-white/40 after:content-['About'] after:absolute after:text-zinc-600 dark:after:text-zinc-400 after:right-3 after:font-bold">About</h1>
+        </div>
+        <div class="max-w-[104rem] w-full lg:min-w-1/2 z-[2] flex flex-col lg:flex-row gap-6 lg:gap-[6rem] mt-8 lg:mt-12">
+            <div class="w-full lg:w-1/3">
                 <p class="font-light text-sm lg:text-base text-justify about-slide">
                     Im Bintang Nugraha Putra a Backend Dev or Mobile Dev or i can be an Artist.
                     I am currently pursuing a degree in Computer Engineering at Jendral Soedirman
@@ -24,42 +25,20 @@
                     and contributing to open-source communities.
                 </p>
 
-                <span class="font-medium mt-4 lg:mt-8 block about-slide">Codename: CrzxaExe3</span>
+                <span class="font-medium mt-4 lg:mt-6 block about-slide">Codename: CrzxaExe3</span>
             </div>
-        </div>
-        <div class="max-w-[104rem] w-full lg:min-h-1/2 z-[2] mt-6 lg:mt-8 flex flex-col lg:flex-row gap-8 lg:gap-6">
-            <div class="w-full lg:w-[45%] bg-zinc-100 dark:bg-dark-800 px-5 py-4 lg:py-3 rounded-xl about-slide">
-                <h1 class="text-xl lg:text-2xl font-bold font-primary tracking-tighter">Latest Certificates</h1>
-                <div class="flex flex-col lg:flex-row gap-4 mt-4 lg:mt-0">
-                    <a :href="certificate.link" target="_blank">
-                        <img class="w-full lg:max-w-[15rem] aspect-video select-none rounded-lg" src="../../assets/img/latest-sertificates.jpg" alt="certif" />
-                    </a>
-                    <div>
-                        <a :href="certificate.link" class="text-base lg:text-lg font-semibold tracking-tight mt-2 lg:mt-0 block">{{ certificate.title }}</a>
-                        <span class="font-extralight text-sm lg:text-base block -mt-1">{{ certificate.code }}</span>
-                        <span class="text-light text-xs block -mt-1">{{ certificate.year }}</span>
-
-                        <p class="mt-3 lg:mt-4 text-xs lg:text-sm font-primary font-light tracking-widest">&quot;{{ certificate.motto }}&quot;</p>
-
-                        <a :href="certificate.allCertificates" target="_blank" class="mt-4 lg:mt-3 block text-sky-600 dark:text-sky-400">See all certificates</a>
-                    </div>
-                </div>
+            <div class="w-full lg:w-2/3 about-slide flex flex-col justify-center items-center">
+                <TechStack />
             </div>
-
-            <!-- <div class="w-full lg:w-1/4 about-slide">
-                <h1 class="font-primary tracking-widest text-xl lg:text-2xl font-semibold">Contact Me</h1>
-                <Sosmed />
-            </div> -->
-        </div>
+        </div> 
     </section>
 </template>
 
 <script setup>
 import { setSectionIndex } from '@/utils/variables';
-import Sosmed from '../lists/Sosmed.vue';
 import { gsap } from 'gsap';
 import { onMounted } from 'vue';
-import { certificate } from '@/constant/data';
+import TechStack from '../lists/TechStack.vue';
 
 function animation() {
     const tl = gsap.timeline({

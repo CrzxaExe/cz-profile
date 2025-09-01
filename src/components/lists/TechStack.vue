@@ -1,19 +1,19 @@
 <template>
-        <div class="flex flex-col gap-8 lg:gap-12 justify-center items-center w-full min-h-[5.4rem] mt-6 lg:mt-4">
-            <vue3-marquee class="flex flex-row resize-none overflow-hidden gap-4 items-center mask-alpha mask-x-from-80% mask-x-to-90%" duration="12" :clone="false">
-                    <img :src="img" :alt="j" class="max-w-[3.05rem] lg:max-w-[5.4rem] items-center flex mr-2 lg:mr-5" v-for="(img, j) in tech[0]" :key="j">
-            </vue3-marquee>
+        <div class="flex flex-col gap-2 justify-center items-center w-full min-h-[5.4rem] mt-6 lg:mt-4 relative max-w-[40rem] group overflow-hidden">
+                <div v-for="(list, i) in tech" :key="i" class="w-full grid grid-cols-9 techstack-left-slide">
+                        <img v-for="(item, j) in list" :key="j" :src="item" :alt="j" class="grayscale-100 group-hover:grayscale-0 transition-all duration-300 ease-in-out opacity-40 group-hover:opacity-100">
+                </div>
 
-            <h1 class="w-full text-center text-2xl lg:text-3xl font-semibold tracking-widest uppercase font-primary">Tech Stack</h1>
-
-            <vue3-marquee class="flex flex-row resize-none overflow-hidden gap-4 items-center mask-alpha mask-x-from-80% mask-x-to-90% min-w-max" duration="16" direction="reverse">
-                    <img :src="img" :alt="j" class="max-w-[1.32rem] lg:max-w-[2.32rem] items-center flex mr-1 lg:mr-2.5" v-for="(img, j) in tech[1]" :key="j">
-            </vue3-marquee>
+                <div class="absolute w-full min-h-full flex items-center justify-center techstack-opacity">
+                        <h1 class="px-3 py-0.5 text-2xl lg:text-4xl font-bold tracking-wider font-primary rounded-lg opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out cursor-default">Tech Stack</h1>
+                </div>
         </div>
 </template>
 
 <script setup>
-import { Vue3Marquee } from "vue3-marquee";
+import { gsap } from 'gsap';
+import { onMounted } from 'vue';
+
 import js from  "../../assets/img/icons/JavaScript.svg"
 import ts from  "../../assets/img/icons/TypeScript.svg"
 import go from  "../../assets/img/icons/Go.svg"
@@ -38,13 +38,42 @@ import figma from "../../assets/img/icons/Figma.svg"
 import vite from "../../assets/img/icons/Vite.js.svg"
 import dc from "../../assets/img/icons/Discord.js.svg"
 import next from "../../assets/img/icons/Next.js.svg"
+import vercel from "../../assets/img/icons/Vercel.svg"
 import mongo from "../../assets/img/icons/MongoDB.svg"
 import mongoose from "../../assets/img/icons/Mongoose.js.svg"
 import docker from "../../assets/img/icons/Docker.svg"
 
 const tech = [
-    [js, ts, go, c, cpp, py, rust, html],
-
-    [njs, bun, npm, vue, react, elysia, express, tailwind, postman, git, github, figma, vite, dc, next, mongo, mongoose, docker],
+    [js, ts, go, c, cpp, py, rust, html, njs],
+    [bun, npm, vue, react, elysia, express, tailwind, postman, vercel],
+    [git, github, figma, vite, dc, next, mongo, mongoose, docker],
 ];
+
+function animation() {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".techstack-left-slide",
+            start: "top bottom",
+            end: "+=10"
+        },
+    })
+
+    tl.from(".techstack-opacity", {
+        alpha: 0,
+        duration: 0.4,
+    })
+
+    tl.from(".techstack-left-slide", {
+        x: "-100%",
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.16
+    })
+}
+
+onMounted(() => {
+    document.fonts && document.fonts.ready ?
+        document.fonts.ready.then(animation) :
+        animation();
+})
 </script>

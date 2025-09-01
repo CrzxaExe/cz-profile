@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from "gsap";
 import AboutSection from './components/sections/AboutSection.vue';
 import RepoSection from './components/sections/RepoSection.vue';
+import Achievement from './components/sections/Achievement.vue';
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -21,6 +22,7 @@ darkmode.value ? document.documentElement.classList.add("dark") : document.docum
     <HeroSection />
     <AboutSection />
     <RepoSection />
+    <Achievement />
   </div>
 </template>
 
