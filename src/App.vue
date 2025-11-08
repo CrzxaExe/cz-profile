@@ -6,9 +6,10 @@ import { darkmode } from './utils/variables';
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from "gsap";
-import AboutSection from './components/sections/AboutSection.vue';
+import ServiceSection from './components/sections/ServiceSection.vue';
 import RepoSection from './components/sections/RepoSection.vue';
 import Achievement from './components/sections/Achievement.vue';
+import Topbar from './components/navigations/Topbar.vue';
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -16,11 +17,12 @@ darkmode.value ? document.documentElement.classList.add("dark") : document.docum
 </script>
 
 <template>
-  <Sidebar />
+  <!-- <Sidebar /> -->
+   <Topbar />
 
-  <div class="w-full lg:pl-16">
+  <div class="w-full">
     <HeroSection />
-    <AboutSection />
+    <ServiceSection />
     <RepoSection />
     <Achievement />
   </div>

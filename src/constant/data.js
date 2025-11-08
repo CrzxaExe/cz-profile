@@ -1,40 +1,79 @@
-import home from "@/assets/img/btn-icons/home.svg";
-import star from "@/assets/img/btn-icons/star.svg";
-import folder from "@/assets/img/btn-icons/folder.svg";
-import medal from "@/assets/img/btn-icons/medal_star.svg";
-
 export const navigation = [
-  { icon: home, to: "#hero", name: "home" },
-  { icon: star, to: "#about", name: "about" },
-  { icon: folder, to: "#repo", name: "repo" },
-  { icon: medal, to: "#medal", name: "file" },
+  { to: "#hero", name: "home" },
+  { to: "#about", name: "about" },
+  { to: "#repo", name: "repo" },
+  { to: "#medal", name: "file" },
+];
+export const otherNav = [
+  {
+    icon: "bx bxl-linkedin",
+    to: "https://www.linkedin.com/in/bintang-nugraha-putra-037a2b319/",
+  },
+  { icon: "bx bxl-discord-alt", to: "https://discord.gg/KZhGaEbR6P" },
 ];
 
 export const sosmed = [
-  {
-    icon: "bx bxl-discord-alt",
-    href: "https://discord.gg/KZhGaEbR6P",
-    text: "@crzxaexe3",
-  },
   {
     icon: "bx bxl-github",
     href: "https://github.com/CrzxaExe",
     text: "CrzxaExe",
   },
   {
-    icon: "bx bxl-linkedin",
-    href: "https://www.linkedin.com/in/bintang-nugraha-putra-037a2b319/",
-    text: "Bintang Nugraha Putra",
+    icon: "bx bxl-gmail",
+    href: "#",
+    text: "bintangnugraha992@gmail.com",
   },
   {
-    icon: "bx bxl-whatsapp",
-    href: "https://wa.me/62895392851501",
-    text: "+62 895-3928-51501",
+    icon: "bx bxl-instagram",
+    href: "https://wa.me/6283899161015",
+    text: "Bintang NP",
   },
   {
     icon: "bx bxl-whatsapp",
     href: "https://wa.me/6283899161015",
     text: "+62 838-9916-1015 (Shop)",
+  },
+];
+
+export const interest = [
+  {
+    name: "Back End Develop",
+    icon: "bx bx-server",
+    description: "Creating monolith or microservice API",
+    total: 5,
+  },
+  {
+    name: "Automization Develop",
+    icon: "bx bx-bot",
+    description: "Creating bot to automize some work",
+    total: 2,
+  },
+  {
+    name: "UI/UX Design",
+    icon: "bx bx-carousel",
+    description: "Designing UI/UX for Web or App",
+    total: 2,
+  },
+  {
+    name: "Illustrationing Artwork",
+    icon: "bx bx-star",
+    description: "Create artwork to fill needed resource",
+    total: 8,
+  },
+];
+
+export const stats = [
+  {
+    name: "Project Completed",
+    value: 3,
+  },
+  {
+    name: "Project Handleled",
+    value: 5,
+  },
+  {
+    name: "Years Experience",
+    value: 4,
   },
 ];
 
