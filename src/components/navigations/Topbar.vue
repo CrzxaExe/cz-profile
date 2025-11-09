@@ -7,20 +7,20 @@
             <div class="flex flex-row items-center gap-2 lg:min-w-[10rem]">
                 <img src="../../assets/img/Zxra-full.png" alt="Logo"
                     class="aspect-square max-w-[3rem] invert-100 dark:invert-0">
-                <h1 class="font-semmibold text-xl lg:text-2xl font-primary">Zxra</h1>
+                <h1 class="font-semibold text-xl lg:text-2xl font-primary">Zxra</h1>
             </div>
 
             <div class="w-full flex flex-row items-center justify-end lg:justify-between">
                 <div class="flex-col lg:flex-row absolute lg:relative justify-between min-w-[12rem] px-5 lg:px-0 py-2 lg:py-0 w-fit lg:w-full top-[9vh] lg:top-0 rounded-xl bg-zinc-300 dark:bg-dark-700 lg:bg-transparent dark:lg:bg-transparent lg:flex" :class="[toggle ? 'flex' : 'hidden']">
                     <ul class="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-10 w-full">
-                        <li class="text-sm font-extralight -mb-2 -ml-2 block lg:hidden">Navigations</li>
-                        <li v-for="({ icon, to, name }, i) in navigation" :key="i" class="flex flex-row gap-2 items-center">
+                        <li class="text-sm font-extralight -ml-2 block lg:hidden">Navigations</li>
+                        <li v-for="({ to, name }, i) in navigation" :key="i" class="flex flex-row gap-2 items-center">
                             <a :href="to" class="text-sm lg:text-base tracking-widest">{{ name.toUpperCase() }}</a>
                         </li>
                     </ul>
                     <div class="flex flex-row gap-4 items-center">
                         <div class="flex flex-col lg:flex-row gap-2 lg:gap-6 lg:items-center mt-2 lg:mt-0 w-full lg:w-fit">
-                            <span class="text-sm font-extralight -mb-2 -ml-2 w-full block lg:hidden">Others</span>
+                            <span class="text-sm font-extralight -ml-2 w-full block lg:hidden">Others</span>
                             <div class="flex flex-row gap-2 lg:gap-4 items-center">
                                 <a v-for="({ icon, to }, i) in otherNav" :key="i" :href="to" class="text-lg lg:text-xl">
                                     <i :class="icon"></i>

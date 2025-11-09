@@ -27,11 +27,28 @@
 
 /* Honme Section */
 @utility hero-section {
-  @apply min-h-screen max-w-screen flex flex-col lg:justify-center lg:items-center pt-[9.4rem] lg:pt-0 px-6 lg:px-0 overflow-hidden;
+  @apply min-h-screen max-w-screen flex flex-col lg:justify-center lg:items-center pt-[10.4rem] lg:pt-0 px-6 lg:px-0 overflow-hidden;
 }
 @utility hero-section-container {
   @apply max-w-[104rem] w-full z-[2] flex flex-col lg:flex-row  relative lg:min-h-[80vh];
 }
 @utility border-animated-div {
   @apply aspect-square border-[1px] lg:border-[0.5px] border-black dark:border-white w-[60vh] opacity-25 lg:w-[70vw] absolute z-[0];
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #242424;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

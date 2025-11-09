@@ -23,7 +23,7 @@
                 </div>
 
                 <ul class="mt-4 lg:mt-6 list-none flex flex-row gap-2 text-lg lg:text-xl hero-slide">
-                    <li v-for="({ href, icon }, i) in sosmed" :key="i" class="rounded-full bg-dark-900 hover:bg-dark-900/40 dark:bg-white dark:hover:bg-white/40 text-white dark:text-dark-900 aspect-square overflow-hidden w-[2rem] h-[2rem] flex items-center justify-center">
+                    <li v-for="({ href, icon }, i) in sosmed" :key="i" class="rounded-full bg-dark-900 hover:bg-dark-900/40 dark:bg-white dark:hover:bg-white/40 text-white dark:text-dark-900 aspect-square overflow-hidden w-[2.1rem] h-[2rem] flex items-center justify-center">
                         <a :href class="mt-[0.15rem]"><i :class="icon"></i></a>
                     </li>
                 </ul>
@@ -31,7 +31,7 @@
             <div class="hidden lg:block w-full lg:w-1/2 lg:min-h-screen mt-0 lg:mt-0">
                 <img src="https://raw.githubusercontent.com/CrzxaExe/portofolio-cz-vue/refs/heads/main/src/assets/me.png" alt="Bintang Nugraha Putra" class="lg:absolute bottom-0 max-w-[16rem] lg:max-w-[38rem] lg:w-[38rem] block ml-[8rem] lg:-ml-[13%] z-[1] aspect-square  lg:aspect-[3/4] object-cover">
 
-                <div class="flex flex-col items-end lg:absolute uppercase text-5xl lg:text-6xl font-extrabold bottom-[5%] -mt-22 lg:mt-0 tracking-tighter right-0 lg:z-[2] bg-linear-to-r/srgb from-dark-900/40 to-dark-900/80 dark:from-white/10 dark:to-white/40 text-transparent bg-clip-text mix-blend-difference">
+                <div class="flex flex-col hero-slide-rev items-end lg:absolute uppercase text-5xl lg:text-6xl font-extrabold bottom-[5%] -mt-22 lg:mt-0 tracking-tighter right-0 lg:z-[2] bg-linear-to-r/srgb from-dark-900/40 to-dark-900/80 dark:from-white/10 dark:to-white/40 text-transparent bg-clip-text mix-blend-difference">
                     <span>Can&apos;t Realize</span>
                     <span>Your Imagination</span>
                 </div>
@@ -95,12 +95,27 @@ function animation() {
             duration: 0.1,
         })
 
-    gsap.from(".hero-slide", {
-        duration: 0.7,
+    const mainAnim = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".hero-slide",
+            start: "top bottom",
+            end: "+=10"
+        },
+    })
+
+    mainAnim.from(".hero-slide", {
+        duration: 0.5,
         x: -50,
         opacity: 0,
         stagger: 0.1
     })
+    mainAnim.from(".hero-slide-rev", {
+        duration: 0.3,
+        x: 50,
+        opacity: 0,
+        stagger: 0.1
+    })
+
     gsap.utils.toArray(".rotation-animation").forEach((el) => {
         gsap.set(el, {
             rotation: gsap.utils.random(0, 360)

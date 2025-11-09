@@ -1,6 +1,6 @@
 export const navigation = [
   { to: "#hero", name: "home" },
-  { to: "#about", name: "about" },
+  { to: "#services", name: "services" },
   { to: "#repo", name: "repo" },
   { to: "#medal", name: "file" },
 ];
@@ -58,7 +58,7 @@ export const interest = [
     name: "Illustrationing Artwork",
     icon: "bx bx-star",
     description: "Create artwork to fill needed resource",
-    total: 8,
+    total: 14,
   },
 ];
 

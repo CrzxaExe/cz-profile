@@ -1,5 +1,4 @@
 <script setup>
-import Sidebar from './components/navigations/Sidebar.vue';
 import HeroSection from './components/sections/HeroSection.vue';
 import { darkmode } from './utils/variables';
 
@@ -17,7 +16,6 @@ darkmode.value ? document.documentElement.classList.add("dark") : document.docum
 </script>
 
 <template>
-  <!-- <Sidebar /> -->
    <Topbar />
 
   <div class="w-full">
