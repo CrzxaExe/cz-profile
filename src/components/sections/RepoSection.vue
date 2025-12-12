@@ -36,7 +36,7 @@
 
         <div class="w-full flex flex-col lg:flex-row-reverse gap-6 lg:gap-[2rem] mt-12 max-w-[104rem] min-h-[70vh] lg:max-h-[70vh] lg:overflow-hidden">
             <div class="w-full max-h-[70vh] lg:w-[72%] flex flex-col gap-4 relative pb-8 lg:pb-0 border-b-[1px] lg:border-b-0">
-                <div class="w-full lg:min-h-[80%] max-h-[45vh] lg:aspect-video flex flex-col relative">
+                <div class="w-full lg:min-h-[80%] max-h-[40vh] lg:aspect-video flex flex-col relative overflow-y-hidden">
                     <div class="w-full flex flex-row items-center">
                         <div class="flex flex-col w-full">
                             <h2 class="text-3xl lg:text-4xl font-bold repo-slide">{{ Formater.name(recent.name ?? "recent-repo") }}</h2>
@@ -44,12 +44,12 @@
                         </div>
                         
                         <div class="w-fit flex flex-row-reverse gap-2 justify-start repo-slide">
-                            <a :href="recent.homepage" v-if="recent.homepage" target="_blank" class="text-lg lg:text-xl bg-black dark:bg-white text-white dark:text-black px-1.5 py-0.5 rounded-lg"><i class="bx bx-link"></i></a>
-                            <a :href="recent.url" target="_blank" class="text-lg lg:text-xl bg-black dark:bg-white text-white dark:text-black px-1.5 py-0.5 rounded-lg"><i class="bx bxl-github"></i></a>
+                            <a :href="recent.homepage" v-if="recent.homepage" target="_blank" class="text-lg lg:text-xl bg-black dark:bg-white text-white dark:text-black px-[0.425rem] py-0.5 rounded-lg"><i class="bx bx-link"></i></a>
+                            <a :href="recent.url" target="_blank" class="text-lg lg:text-xl bg-black dark:bg-white text-white dark:text-black px-[0.425rem] py-0.5 rounded-lg"><i class="bx bxl-github"></i></a>
                         </div>
                     </div>
 
-                    <div class="mt-2 w-full min-h-full lg:max-h-[46vh] aspect-[3/2] lg:aspect-[10/8] overflow-hidden shadow-lg flex justify-center items-center rounded-xl lg:rounded-2xl relative repo-slide" :class="[!recent.img ? 'bg-black' : '']">
+                    <div class="mt-2 w-full max-h-full aspect-[3/2] lg:aspect-[10/4] overflow-hidden shadow-lg flex justify-center items-center rounded-xl lg:rounded-2xl relative repo-slide" :class="[!recent.img ? 'bg-black' : '']">
                         <img v-if="recent.img" :src="recent.img" :alt="recent.name" class="max-h-full object-contain z-[2]">
                         <img v-if="recent.img" :src="recent.img" :alt="recent.name" class="absolute min-w-full object-fill z-[1] blur-md">
                     </div>

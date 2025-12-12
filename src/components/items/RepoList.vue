@@ -3,6 +3,7 @@
         <div class="max-w-[7rem] overflow-hidden object-fill aspect-[4/3] w-full flex justify-center items-center rounded-lg" :class="[item.accent ?? 'bg-dark-800']">
             <img v-if="item.img" :src="item.img" :alt="item.name" :class="item.imgClass">
         </div>
+
         <div class="flex flex-col w-full max-w-[24rem]">
             <h1 class="text-base lg:text-lg font-bold tracking-tighter">{{ Formater.name(item.name) }}</h1>
             <span v-if="item.language" class="text-xs -mt-1">{{ item.language }}</span>
