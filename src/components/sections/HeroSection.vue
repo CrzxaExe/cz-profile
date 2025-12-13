@@ -29,7 +29,7 @@
                 </ul>
             </div>
             <div class="hidden lg:block w-full lg:w-1/2 lg:min-h-screen mt-0 lg:mt-0">
-                <img src="https://raw.githubusercontent.com/CrzxaExe/portofolio-cz-vue/refs/heads/main/src/assets/me.png" alt="Bintang Nugraha Putra" class="lg:absolute bottom-0 max-w-[16rem] lg:max-w-[38rem] lg:w-[38rem] block ml-[8rem] lg:-ml-[13%] z-[1] aspect-square  lg:aspect-[3/4] object-cover">
+                <img :src="meImg" alt="Bintang Nugraha Putra" class="lg:absolute bottom-0 max-w-[16rem] lg:max-w-[38rem] lg:w-[38rem] block ml-[8rem] lg:-ml-[13%] z-[1] aspect-square  lg:aspect-[3/4] object-cover">
 
                 <div class="flex flex-col hero-slide-rev items-end lg:absolute uppercase text-5xl lg:text-6xl font-extrabold bottom-[5%] -mt-22 lg:mt-0 tracking-tighter right-0 lg:z-[2] bg-linear-to-r/srgb from-dark-900/40 to-dark-900/80 dark:from-white/10 dark:to-white/40 text-transparent bg-clip-text mix-blend-difference">
                     <span>Can&apos;t Realize</span>
@@ -48,6 +48,8 @@ import { setSectionIndex } from '@/utils/variables';
 import { gsap } from 'gsap';
 import { onMounted } from 'vue';
 import { sosmed } from '@/constant/data';
+
+import meImg from '@/assets/img/me.png';
 
 const box = [
     ["w-[50vh]", "lg:w-[68vw]", "-top-[0%]", "lg:-top-[33%]", "-right-[20%]", "lg:-right-[20%]"],

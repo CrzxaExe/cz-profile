@@ -8,7 +8,7 @@
                 <h1
                     class="w-fit text-5xl lg:text-6xl text-left rounded-2xl font-semibold font-primary service-slide relative">
                     What Can I Do For Your Needs</h1>
-                <h3 class="mt-2 lg:mt-4 text-base lg:max-w-[50%] service-slide">It is easier to entrust the work to the experts because they are able provide the best result</h3>
+                <h3 class="mt-2 lg:mt-4 text-base lg:max-w-[50%] service-slide">It is easier to entrust the work to the experts because they are able provide the best result. In between ours goods.</h3>
 
                 <div class="mt-12 lg:mt-8 grid grid-cols-2 lg:grid-cols-4">
                     <div v-for="({ name, value }, i) in stats" :key="i" class="flex flex-col service-slide py-3 lg:py-0">

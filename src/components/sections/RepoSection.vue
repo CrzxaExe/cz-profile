@@ -79,18 +79,10 @@ import { nextTick, onMounted, ref } from 'vue';
 import { gsap } from 'gsap';
 import RepoList from '../items/RepoList.vue';
 import { Formater } from '@/utils/formater';
-
-const img = [
-    { name: "Better-Zxra-Bedrock_TS", img: "https://raw.githubusercontent.com/CrzxaExe/Better-Zxra-Bedrock_TS/refs/heads/main/resource_packs/BZB/pack_icon.png", accent: "bg-black", imgClass: "max-w-[8rem] mx-auto" },
-    { name: "ZxRust-Api", img: "https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/mkx.jpg", accent: "bg-black", imgClass: "max-w-[8rem]  mx-auto" },
-    { name: "cz-profile", img: "https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202025-08-28%20152831.png", accent: "bg-gray-600", imgClass: "max-w-[8rem] mx-auto" },
-    { name: "Project-Tekkom-24", img: "https://raw.githubusercontent.com/CrzxaExe/CrzxaExe/refs/heads/main/asset/Screenshot%202025-08-28%20153134.png", accent: "bg-gray-600", imgClass: "max-w-[8rem] mx-auto" },
-    { name: "cz-elysia-api", img: "https://elysiajs.com/assets/elysia.svg", accent: "bg-zinc-100", imgClass: "max-w-[5rem] mx-auto" },
-    { name: "kaltsit_design", img: "https://raw.githubusercontent.com/CrzxaExe/kaltsit_design/refs/heads/main/src/img/kal4.jpg", accent: "bg-white", imgClass: "max-w-[7rem] mx-auto" },
-]
+import { repoFilter, repoImages } from '@/constant/list';
 
 const profile = ref({});
-const repos = ref([]);
+const repos = ref([].fill({ name: "Unknown", description: "Idk bruh", topics: [], }, 5));
 const recent = ref({});
 const fullView = ref(false);
 const getData = async (url) => {
@@ -101,18 +93,15 @@ const getData = async (url) => {
         if (!result || !rps) throw new Error("Axios error");
 
         profile.value = result.data;
-        repos.value = rps.data.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()).map((e, i) => {
-            const find = img.find(r => r.name === e.name);
+        repos.value = rps.data.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()).filter(e => !repoFilter.includes(e.name)).map((e, i) => {
+            const find = repoImages.find(r => r.name === e.name);
 
             let temp = e;
 
-            if (!find) return e;
-
-            temp = {
+            if (find) temp = {
                 ...e,
                 ...find,
             }
-            console.log(temp)
 
             if(i === 0) {
                 recent.value = temp;

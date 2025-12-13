@@ -4,8 +4,8 @@
             <img v-if="item.img" :src="item.img" :alt="item.name" :class="item.imgClass">
         </div>
 
-        <div class="flex flex-col w-full max-w-[24rem]">
-            <h1 class="text-base lg:text-lg font-bold tracking-tighter">{{ Formater.name(item.name) }}</h1>
+        <div class="flex flex-col w-full items-start max-w-[24rem]">
+            <h1 class="text-base lg:text-lg font-bold tracking-tighter max-h-[2rem] truncate max-w-[16rem]">{{ Formater.name(item.name) }}</h1>
             <span v-if="item.language" class="text-xs -mt-1">{{ item.language }}</span>
             <div v-if="item.topics.length > 0" class="flex flex-row flex-wrap gap-1 text-xs max-w-[24rem] mt-2">
                 <span v-for="topic in item.topics" class="ring-1 ring-cyan-600 dark:ring-cyan-500 text-cyan-600 dark:text-cyan-500 rounded-full px-2 py-[1px]">{{ topic }}</span>
